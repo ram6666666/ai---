@@ -1,0 +1,314 @@
+\documentclass[12pt,a4paper,oneside,openany]{book}
+\usepackage[a4paper,left=18mm,right=18mm,top=18mm,bottom=19mm,headheight=15pt,headsep=6mm,footskip=9mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{physics}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{float}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,patterns,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\setstretch{1.06}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0.18em}
+\setlist{nosep,leftmargin=2.0em}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,pdfauthor={A. D. Polosa course-based QFT notes},pdftitle={Introduction to Quantum Field Theory — Part III: Charged Matter and Electromagnetic Coupling}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Introduction to Quantum Field Theory --- Part III}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{\filleft\Large Chapter \thechapter}{1ex}{\titlerule\vspace{1.2ex}\filright}
+\titleformat{\section}{\normalfont\bfseries\Large}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\bfseries\large}{\thesubsection}{0.7em}{}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\Efield}{\mathbf E}
+\newcommand{\Bfield}{\mathbf B}
+\newcommand{\Afield}{\mathbf A}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Dcov}{D}
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+\vspace*{2.5cm}
+{\Huge\bfseries Introduction to Quantum Field Theory\par}
+\vspace{0.7cm}
+{\large Course-based reconstruction from A. D. Polosa's lectures\par}
+\vspace{1.8cm}
+{\huge\bfseries Part III\par}
+\vspace{0.45cm}
+{\LARGE Charged Matter and Electromagnetic Coupling\par}
+\vfill
+{\large 30 August 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\chapter*{Conventions}
+\addcontentsline{toc}{chapter}{Conventions}
+The metric, Fourier phases and continuum operator normalization are those of Parts I--II,
+\[
+\eta_{\mu\nu}=\operatorname{diag}(+1,-1,-1,-1),\qquad
+\ee^{-\ii p\cdot x}=\ee^{-\ii p^0t+\ii\mathbf p\cdot\mathbf x},
+\]
+\[
+[a(\mathbf p),a^\dagger(\mathbf q)]=(2\pi)^3\delta^{(3)}(\mathbf p-\mathbf q),
+\qquad
+|\mathbf p\rangle_{\rm inv}=\sqrt{2E_{\mathbf p}}\,a^\dagger(\mathbf p)|0\rangle.
+\]
+For electromagnetism,
+\[
+A^\mu=(A^0,\Afield),\qquad
+A_\mu\longrightarrow A_\mu+\partial_\mu\alpha,
+\]
+so in three-vector notation
+\[
+A^0\longrightarrow A^0+\partial_t\alpha,
+\qquad
+\Afield\longrightarrow\Afield-\nabla\alpha.
+\]
+The electromagnetic convention is inherited rather than chosen anew in this Part. The transformation law of charged matter will not be assumed here; it will be fixed only when the Maxwell gauge orbit is coupled to the already-quantized complex scalar. Every subsequent sign is then derived from those inherited conventions and that coupling requirement rather than imported from a different gauge orientation.
+
+\tableofcontents
+\mainmatter
+
+\chapter{When the charged source becomes dynamical}
+
+Part II coupled Maxwell theory to a \emph{prescribed} conserved source. That construction used only
+\[
+\partial_\mu J^\mu=0,
+\]
+so a boundary-trivial change \(A_\mu\to A_\mu+\partial_\mu\alpha\) changed the source action by a boundary term. A charged scalar is not prescribed independently of the electromagnetic field: once the coupling is switched on, the interaction also changes the scalar equation of motion and with it the current that can consistently source Maxwell's equation.
+
+The charge sectors themselves are already fixed. For the free complex scalar,
+\begin{equation}
+:Q:=\int\frac{\dd^3p}{(2\pi)^3}
+\left[a^\dagger(\mathbf p)a(\mathbf p)-b^\dagger(\mathbf p)b(\mathbf p)\right],
+\label{eq:p3-free-Q}
+\end{equation}
+and a species with particle charge \(q\) has \(Q_{\rm phys}=qQ\). Thus \(a^\dagger|0\rangle\) and \(b^\dagger|0\rangle\) carry \(+q\) and \(-q\). The corresponding free charge current is
+\begin{equation}
+\boxed{
+J_{(0)}^\mu
+=\ii q\left[
+\Phi^*\partial^\mu\Phi-(\partial^\mu\Phi^*)\Phi
+\right].}
+\label{eq:p3-free-charge-current}
+\end{equation}
+For a positive-frequency free plane wave \(\Phi=A\ee^{-\ii p\cdot x}\), \(p^0>0\),
+\begin{equation}
+J_{(0)}^\mu=2q p^\mu|A|^2,
+\label{eq:p3-plane-wave-current}
+\end{equation}
+so the sign of \(J^0\) follows the signed charge on the particle branch.
+
+\section{The free current fails as a dynamical Maxwell source}
+
+The most economical first attempt is to reuse the free current in the source term,
+\begin{equation}
+\Lagr_{\rm try}
+=\partial_\mu\Phi^*\partial^\mu\Phi-m^2|\Phi|^2
+-\frac14F_{\mu\nu}F^{\mu\nu}
+-A_\mu J_{(0)}^\mu.
+\label{eq:p3-linear-try}
+\end{equation}
+Varying \(A_\nu\) gives
+\begin{equation}
+\partial_\mu F^{\mu\nu}=J_{(0)}^\nu.
+\label{eq:p3-linear-try-Maxwell}
+\end{equation}
+The antisymmetry of \(F^{\mu\nu}\) makes the left-hand side identically divergence-free:
+\begin{equation}
+\partial_\nu\partial_\mu F^{\mu\nu}=0.
+\label{eq:p3-Maxwell-div-identity}
+\end{equation}
+A dynamical source appearing on the right of Maxwell's equation must therefore satisfy \(\partial_\mu J^\mu=0\) on the coupled equations.
+
+That requirement is not met by the free current. Varying \(\Phi^*\) in \cref{eq:p3-linear-try} gives
+\begin{align}
+0={}&\partial_\mu\!\left(\partial^\mu\Phi+\ii qA^\mu\Phi\right)
++m^2\Phi+\ii qA_\mu\partial^\mu\Phi\\
+={}&(\Box+m^2)\Phi
++\ii q(\partial_\mu A^\mu)\Phi
++2\ii qA^\mu\partial_\mu\Phi,
+\label{eq:p3-linear-try-matter-eom}
+\end{align}
+while the conjugate equation is
+\begin{equation}
+(\Box+m^2)\Phi^*
+-\ii q(\partial_\mu A^\mu)\Phi^*
+-2\ii qA^\mu\partial_\mu\Phi^*=0.
+\label{eq:p3-linear-try-matter-eom-conj}
+\end{equation}
+The divergence of the free current is
+\begin{align}
+\partial_\mu J_{(0)}^\mu
+&=\ii q\left(\Phi^*\Box\Phi-\Phi\Box\Phi^*\right)\\
+&=2q^2\left[(\partial_\mu A^\mu)|\Phi|^2
++A^\mu\partial_\mu|\Phi|^2\right]\\
+&=\boxed{2q^2\partial_\mu\!\left(A^\mu|\Phi|^2\right)}.
+\label{eq:p3-free-current-not-conserved}
+\end{align}
+The equation \cref{eq:p3-linear-try-Maxwell} demands zero divergence, whereas the matter equation generated by the trial Lagrangian gives \cref{eq:p3-free-current-not-conserved}. The failure is more specific than a loss of global charge conservation. The trial matter Lagrangian is still invariant under a \emph{constant} phase rotation, but its Noether current is no longer the free current because the derivative coupling has changed the canonical momenta. Applying the Noether construction to \cref{eq:p3-linear-try} gives
+\begin{equation}
+J_{\rm try}^\mu
+=J_{(0)}^\mu-2q^2A^\mu|\Phi|^2,
+\qquad
+\partial_\mu J_{\rm try}^\mu=0
+\label{eq:p3-interacting-current-preview}
+\end{equation}
+on the trial matter equation. Equation \eqref{eq:p3-free-current-not-conserved} is exactly the cancellation needed for this conservation law.
+
+The inconsistency is therefore an interface failure: Maxwell's equation in \cref{eq:p3-linear-try-Maxwell} was sourced by \(J_{(0)}^\mu\), while the coupled matter theory conserves \(J_{\rm try}^\mu\). A consistent local theory must make the dynamical Maxwell source and the interacting charge current coincide. The question is what local principle produces that correction in the field equation rather than inserting it by hand.
+
+\section{Local rephasing and the ordinary derivative}
+
+Maxwell theory has already supplied an equivalence relation among potentials,
+\[
+A_\mu' = A_\mu+\partial_\mu\alpha.
+\]
+The free scalar also has a genuine global charge symmetry \(\Phi\to e^{-\ii\beta}\Phi\), generated by the dimensionless charge \(Q\) of Part II. Equivalently, writing \(\beta=q\alpha_0\), \(U(\alpha_0)=e^{+\ii\alpha_0Q_{\rm phys}}\) with \(Q_{\rm phys}=qQ\). This global transformation and a Maxwell gauge-representative change have different status.
+\newpage
+To repair the source mismatch while preserving the physical equivalence of boundary-trivial Maxwell representatives, seek a local action on the charged field that uses the already established charge representation. The minimal local choice is
+\begin{equation}
+\Phi'(x)=\ee^{-\ii q\alpha(x)}\Phi(x).
+\label{eq:p3-local-phase}
+\end{equation}
+For gauge functions that are trivial at the boundary, this local rephasing relates descriptions on one gauge orbit and carries no additional observable charge. Constant global phase rotations generated by \(Q_{\rm phys}\), and more generally boundary-nontrivial gauge transformations, are not being quotiented away by that statement. The local phase law is therefore a construction of the gauge-representative action on charged matter, not a new independent global symmetry postulate.
+
+The obstruction sits in the ordinary derivative:
+\begin{align}
+\partial_\mu\Phi'
+&=\partial_\mu\!\left(\ee^{-\ii q\alpha}\Phi\right)\\
+&=\ee^{-\ii q\alpha}
+\left[\partial_\mu\Phi-\ii q(\partial_\mu\alpha)\Phi\right].
+\label{eq:p3-ordinary-derivative-failure}
+\end{align}
+Nearby phases are being compared as though their local conventions had already been identified.
+
+For
+\begin{equation}
+\Lagr_0=\partial_\mu\Phi^*\partial^\mu\Phi-m^2|\Phi|^2,
+\label{eq:p3-free-complex-L}
+\end{equation}
+the first-order local variation is
+\begin{align}
+\delta\Lagr_0
+&=\ii q(\partial_\mu\alpha)
+\left[\Phi^*\partial^\mu\Phi-(\partial^\mu\Phi^*)\Phi\right]\\
+&=(\partial_\mu\alpha)J_{(0)}^\mu.
+\label{eq:p3-local-L-variation}
+\end{align}
+The sign in this equation is fixed by the already chosen convention \(\Phi'=e^{-\ii q\alpha}\Phi\); no independent gauge-orientation choice remains.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+\coordinate (x) at (-3.2,0);
+\coordinate (y) at (3.2,0.9);
+\fill (x) circle (2.2pt) node[below=4pt] {$x$};
+\fill (y) circle (2.2pt) node[below=4pt] {$x+\dd x$};
+\draw[->,thick] (x) -- (y) node[midway,above=11pt] {comparison along $\dd x^\mu$};
+\draw[->] ($(x)+(0,0.2)$) arc[start angle=0,end angle=280,radius=0.55];
+\draw[->] ($(y)+(0,0.2)$) arc[start angle=0,end angle=220,radius=0.55];
+\node at (-3.2,1.35) {$\Phi(x)$};
+\node at (-3.95,0.62) {$q\alpha(x)$};
+\node at (3.2,2.05) {$\Phi(x+\dd x)$};
+\node at (3.95,1.35) {$q\alpha(x+\dd x)$};
+\node[align=center] at (0,-1.45) {$A_\mu$ changes when the local phase convention changes,\\so the derivative can compare the two representatives covariantly.};
+\end{tikzpicture}
+\caption{A local change of charged phase convention alters how neighboring field values are compared. The electromagnetic connection compensates that change.}
+\label{fig:p3-local-phase-comparison}
+\end{figure}
+
+\section{Gauge-orbit consistency fixes the quadratic term}
+
+The inconsistency of \cref{eq:p3-linear-try} can now be diagnosed directly under a change of representative. The free current transforms as
+\begin{align}
+J_{(0)}^{\prime\mu}
+&=\ii q\left[
+\Phi'^*\partial^\mu\Phi'-(\partial^\mu\Phi'^*)\Phi'
+\right]\\
+&=J_{(0)}^\mu+2q^2|\Phi|^2\partial^\mu\alpha.
+\label{eq:p3-free-current-local-transform}
+\end{align}
+Consequently,
+\begin{align}
+\delta(-A_\mu J_{(0)}^\mu)
+&=-(\partial_\mu\alpha)J_{(0)}^\mu
+-A_\mu\delta J_{(0)}^\mu\\
+&=-(\partial_\mu\alpha)J_{(0)}^\mu
+-2q^2A_\mu|\Phi|^2\partial^\mu\alpha.
+\end{align}
+The first term cancels \cref{eq:p3-local-L-variation}; the second is the local remainder. Its tensor structure is not arbitrary. To first order in \(\alpha\),
+\begin{equation}
+\delta\!\left(q^2A_\mu A^\mu|\Phi|^2\right)
+=2q^2A_\mu|\Phi|^2\partial^\mu\alpha.
+\label{eq:p3-seagull-local-repair}
+\end{equation}
+The quadratic interaction inferred from representative independence is exactly the term whose variation with respect to \(A_\mu\) supplies the source correction anticipated in \cref{eq:p3-interacting-current-preview}. Rather than add further terms order by order, the local comparison law can be repaired directly.
+
+\section{Constructing the covariant derivative}
+
+We want a derivative-like object whose result transforms with the same local phase as the field:
+\begin{equation}
+(D_\mu\Phi)'=\ee^{-\ii q\alpha}D_\mu\Phi.
+\label{eq:p3-covariance-target}
+\end{equation}
+The Maxwell orbit is already fixed:
+\[
+A_\mu'=A_\mu+\partial_\mu\alpha.
+\]
+Try
+\begin{equation}
+\boxed{D_\mu\equiv\partial_\mu+\ii qA_\mu.}
+\label{eq:p3-covariant-derivative}
+\end{equation}
+Then
+\begin{align}
+D_\mu'\Phi'
+&=\left[\partial_\mu+\ii q(A_\mu+\partial_\mu\alpha)\right]
+\ee^{-\ii q\alpha}\Phi\\
+&=\ee^{-\ii q\alpha}
+\left[\partial_\mu\Phi-\ii q(\partial_\mu\alpha)\Phi
++\ii qA_\mu\Phi+\ii q(\partial_\mu\alpha)\Phi\right]\\
+&=\ee^{-\ii q\alpha}D_\mu\Phi.
+\label{eq:p3-D-covariance-check}
+\end{align}
+The derivative mismatch is cancelled point by point. The Maxwell potential, redundant as a choice of representative, now serves as the connection that compares charged phases locally.
+
+The commutator of two such comparisons returns the electromagnetic field strength:
+\begin{align}
+[D_\mu,D_\nu]\Phi
+&=\ii q(\partial_\mu A_\nu-\partial_\nu A_\mu)\Phi\\
+&=\boxed{\ii qF_{\mu\nu}\Phi.}
+\label{eq:p3-D-commutator}
+\end{align}
+Thus the local curvature of the phase-comparison rule is the gauge-invariant field already measured by \(\Efield\) and \(\Bfield\).
+
+\section{The coupled action and the seagull term}
+
+The lowest-derivative completion of the free scalar kinetic term is now
+\begin{equation}
+\boxed{
+\Lagr_{\rm SQED}
+=-\frac14F_{\mu\nu}F^{\mu\nu}
++(D_\mu\Phi)^*D^\mu\Phi-m^2|\Phi|^2.}
+\label{eq:p3-SQED-L}
+\end{equation}
+This is the minimal electromagnetic model needed here, not the most general renormalizable scalar theory. A separately gauge-invariant scalar self-interaction \(-\lambda_\Phi(\Phi^*\Phi)^2\) is allowed and is in general required once scalar QED is treated as a renormalized quantum theory. We set \(\lambda_\Phi=0\) in this Part because it does 
