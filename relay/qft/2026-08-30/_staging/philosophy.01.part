@@ -1,0 +1,364 @@
+# Canonical Writing Philosophy
+## Polosa QFT Core and the Extended Personal Quantum Field Theory Framework
+
+## Purpose
+
+This document states the scientific and pedagogical philosophy governing the QFT notes project. It is more fundamental than an outline, style guide, acceptance checklist, or production workflow. The immediate spine comes from Antonio Polosa's QFT course, but the intended endpoint is a durable personal field-theory framework that can later support perturbative scattering, path integrals, renormalization and RG, gauge theory, many-body field theory, finite-temperature methods, condensed-matter field theory, statistical field theory, disorder, and related areas.
+
+The project should be reviewed against the question: **what kind of understanding should the reader acquire, and what kind of scientific reasoning should the exposition embody?**
+
+---
+
+## 1. The target object
+
+The project is not a transcription of Polosa, an exam cram sheet, a conventional textbook rewritten in new words, a collage of famous QFT books, or an encyclopedic collection of facts. The desired object is a **reconstructible theory-building reader**.
+
+A reader returning after a long interval should be able to recover locally:
+
+1. the physical/conceptual question;
+2. the reader state already established;
+3. the exact limitation of the current description;
+4. the new object or structure introduced;
+5. its theoretical status;
+6. its construction;
+7. its transformation law;
+8. its algebra/dynamics;
+9. how it is actually used;
+10. the physical consequence, observable, limit, or calculation that closes the argument.
+
+Recognition is not enough. The goal is **independent reconstruction and operation**.
+
+---
+
+## 2. QFT should appear as a theory being built
+
+The default scientific movement is
+
+\[
+\text{established structure}
+\rightarrow
+\text{unresolved pressure}
+\rightarrow
+\text{precise limitation}
+\rightarrow
+\text{minimal additional structure}
+\rightarrow
+\text{derivation}
+\rightarrow
+\text{physical consequence}.
+\]
+
+This is not a mandatory rhetorical template. Some developments arise by generalization, symmetry, a change of representation, approximation, effective description, mathematical consistency, or a new observable question. Artificial paradoxes are a failure mode.
+
+The real principle is: **a formal structure should appear only when its role in the theory has become intelligible.**
+
+---
+
+## 3. Observables-first does not mean phenomenology-first
+
+Formalism should remain anchored to physical questions and eventually return to physical use. The preferred long arc, when scientifically appropriate, is
+
+\[
+\text{phenomenon}
+\rightarrow
+\text{model}
+\rightarrow
+\text{formal structure}
+\rightarrow
+\text{calculation}
+\rightarrow
+\text{observable}
+\rightarrow
+\text{interpretation}.
+\]
+
+But foundational abstractions need not wait until a literal experiment can be discussed. The project rejects both formalism without physical closure and phenomenology without theoretical structure.
+
+---
+
+## 4. Complexity expansion
+
+Whenever possible, increase complexity along a controlled axis. A later level should answer a question that the preceding level could not.
+
+Examples:
+
+\[
+\text{finite oscillators}
+\rightarrow
+\text{continuum field}
+\rightarrow
+\text{quantized modes}
+\rightarrow
+\text{relativistic local field},
+\]
+
+\[
+\text{prescribed electromagnetic source}
+\rightarrow
+\text{dynamical charged matter}
+\rightarrow
+\text{gauge-completed interacting theory}.
+\]
+
+Simple models should serve as diagnostic controls, not merely warm-ups.
+
+---
+
+## 5. Polosa fidelity
+
+Polosa remains the central pedagogical spine, but fidelity means fidelity to **intellectual motion**, not transcriptional order.
+
+Preserve where possible:
+- the questions he chooses;
+- his problem-solving trajectory;
+- characteristic calculations and examples;
+- the balance between field structure and concrete particle-physics reasoning.
+
+Reorder locally when written exposition otherwise creates dependency inversion, premature use of an object, conceptual conflation, or an unreconstructible lecture-room shortcut. Do not reorder merely because another textbook has a more familiar structure.
+
+Neither “Polosa order always wins” nor “reconstructed order always wins” is a valid global rule. The physics and dependency structure decide locally.
+
+---
+
+## 6. Self-contained does not mean elementary
+
+The intended reader is technically mature. Depth is not capped by exam purpose.
+
+Self-contained means that the local argument supplies enough definitions, assumptions, transformation laws, intermediate equations, normalization choices, boundary prescriptions, limiting procedures, and fragile steps for reconstruction without silently importing another book.
+
+The desired combination is
+
+\[
+\text{advanced depth} + \text{local reconstructibility}.
+\]
+
+---
+
+## 7. Lifecycle of a load-bearing object
+
+Central objects should eventually pass through enough of the lifecycle
+
+\[
+\boxed{
+\text{motivation}
+\rightarrow
+\text{definition}
+\rightarrow
+\text{construction}
+\rightarrow
+\text{transformation}
+\rightarrow
+\text{algebra/dynamics}
+\rightarrow
+\text{operational use}
+}
+\]
+
+without mechanically turning those stages into visible headings.
+
+---
+
+## 8. Theoretical-status discipline
+
+The notes must resist collapsing objects merely because textbooks use the same everyday label. Important distinctions include:
+
+- normal-mode quantum vs relativistic particle;
+- one-particle Hilbert-space state vs local field;
+- unitary Poincare representation vs finite-dimensional Lorentz representation;
+- field-component index vs spin/helicity label;
+- local operator vs particle wavefunction;
+- Wightman correlation vs causal response;
+- Feynman vs retarded Green function;
+- canonical vs kinetic momentum;
+- global symmetry vs gauge redundancy;
+- gauge representative vs physical state;
+- prescribed source vs dynamical Noether current;
+- identity vs approximation;
+- mathematical convenience vs physical condition;
+- microscopic vs effective description;
+- historical/pedagogical route vs logical necessity.
+
+A phrase such as “particles are excitations of fields” cannot replace the missing particle-field interface.
+
+---
+
+## 9. Compare different construction routes
+
+When the same theory can be reached from different conceptual directions, make the routes explicit rather than silently identifying them.
+
+For the free relativistic scalar, distinguish:
+- field-first: local Lorentz-covariant classical field, then quantization;
+- particle-first: positive-energy one-particle Poincare representation, then ask for a local interpolating field;
+- two-sided matching: compare the structures and show where they coincide.
+
+The operations “impose relativity” and “quantize” should not be assumed to commute merely because the healthy free scalar makes them converge.
+
+---
+
+## 10. First-mile completeness
+
+A new formalism should not appear before the reader can understand what problem it solves. Important questions include:
+- What is being asked?
+- What description is currently available?
+- Exactly where does it fail?
+- Is the failure physical, mathematical, representational, or calculational?
+- What is the minimal structure that repairs it?
+
+This is especially important for gauge fields, Green functions, time ordering, asymptotic states, path integrals, renormalization, effective actions, Ward identities, RG, and spontaneous symmetry breaking.
+
+---
+
+## 11. Last-mile completeness
+
+A formal derivation should not stop automatically at the first elegant identity. Major constructions should eventually return, when appropriate, to an observable, rate, correlation, cross section, spectral feature, force, conserved flux, localization statement, limit, selection rule, or concrete calculation.
+
+Formalism is not its own endpoint.
+
+---
+
+## 12. Derivational patience
+
+Do not hide load-bearing steps behind “it follows”, “one finds”, or “straightforward algebra”. The criterion is not whether the algebra is standard, but whether omitting it prevents reconstruction of the change in theoretical status or the origin of a fragile sign/factor/boundary term.
+
+Preserve when relevant:
+- normalizations and factors of 2pi;
+- delta functions and Jacobians;
+- symmetry/combinatorial factors;
+- operator ordering and Grassmann signs;
+- equal-time commutators and contact terms;
+- boundary terms and integration by parts;
+- polarization conventions and momentum routing;
+- analytic continuation and branch choices;
+- order of limits;
+- gauge fixing and constraints;
+- approximations, truncations, and projections.
+
+This is the project’s Greiner-style pedagogical patience principle.
+
+---
+
+## 13. Singular and boundary mechanisms stay visible
+
+Compact formulas must not erase the mechanism that produces singular or boundary contributions. For time-ordered Green functions, for example,
+
+\[
+\partial_t\Theta(t-t')=\delta(t-t')
+\]
+
+combined with the equal-time algebra is part of the physics and mathematics of the contact term.
+
+The same principle applies to surface terms, contour prescriptions, poles, cuts, discontinuities, singular Jacobians, and integration endpoints.
+
+---
+
+## 14. Defining equation is not complete physical specification
+
+A project-wide principle is
+
+\[
+\boxed{\text{equation}\neq\text{physical prescription}.}
+\]
+
+For example,
+
+\[
+(\Box+m^2)G=\delta^{(4)}
+\]
+
+is compatible with retarded, advanced, Feynman, and other choices distinguished by boundary/contour data.
+
+Likewise, an on-shell condition does not determine incoming vs outgoing radiation, a gauge condition does not determine physical content, and a formal stationary solution does not by itself identify the physical state.
+
+---
+
+## 15. Preserve useful intuition before correcting it
+
+When an intuition is partly right but overextended, prefer
+
+\[
+\boxed{\text{preserve}\rightarrow\text{limit the domain}\rightarrow\text{rebuild precisely}}
+\]
+
+rather than beginning with a blanket negation.
+
+---
+
+## 16. Apparent contradictions trigger a status/limit audit
+
+Before choosing between apparently conflicting statements, ask whether they concern different states, ensembles, sectors, representations, observables, limits, boundary prescriptions, gauge representatives, or orders of limits.
+
+This is a transferable scientific habit across QFT, many-body theory, statistical physics, and disorder.
+
+---
+
+## 17. Translate between representations explicitly
+
+For important changes of representation—position/momentum, oscillator/creation-annihilation, plane-wave/spherical photon basis, helicity/E-M multipoles, local field/one-particle matrix elements, covariant/constrained Hamiltonian, field/worldline minimal coupling—state what is transformed, what is preserved, what interpretation changes, what is genuinely equivalent, and what becomes easier to calculate.
+
+A basis change must not masquerade as a new physical degree of freedom.
+
+---
+
+## 18. Diagrams are first-class reasoning objects
+
+When a calculation depends on a Feynman diagram or other figure, the reader should be able to read external states, internal lines, momentum routing, polarization labels, interaction vertices, combinatorics, ordering distinctions, and physical process from it. Algebra and diagram should map explicitly to each other.
+
+Figures should reduce reasoning burden, not decorate the page.
+
+---
+
+## 19. Source assimilation, not source collage
+
+Use the reference corpus comparatively. Polosa supplies the central course trajectory; Coleman, Srednicki, Peskin-Schroeder, Schwartz, Greiner, Stone, Zee, Duncan, de Wit, Collins, and others contribute complementary strengths.
+
+Absorb strong derivations, counterexamples, checks, conceptual distinctions, and warnings, then reconstruct them in one notation and one project architecture. Do not let the chapter change intellectual personality whenever the hidden source changes.
+
+---
+
+## 20. Reader model
+
+The reader is an advanced returning reader, not a total beginner. They do not need every elementary algebraic manipulation or generic motivational slogan, but they do need the correct local assumptions, fragile normalization/sign data, theoretical-status distinctions, enough intermediate derivation to reconstruct the result, physical closure, and interfaces between sections that may otherwise be forgotten.
+
+---
+
+## 21. Chapter openings restore reader state
+
+A chapter opening should restore what has already been established, what remains unresolved, why the present question matters, and what type of structure is now required. It should not be a miniature table of contents.
+
+---
+
+## 22. Transitions are carried mainly by physics
+
+Prefer current result -> remaining limitation -> next minimal question over repeated authorial announcements such as “Having completed X, we now turn to Y”. Do not manufacture a crisis where a clean extension is more natural.
+
+---
+
+## 23. Endings leave scientific momentum
+
+End on a calculation, physical consequence, limitation, failure test, unresolved term, or quantity that cannot yet be evaluated whenever possible. Do not ritualistically summarize the chapter or announce the next one.
+
+---
+
+## 24. Final prose hides the production machinery
+
+Backend artifacts may contain requirements, Local Writing Contracts, issue registries, and audit reports. The printed reader should generally not.
+
+Avoid recurring AI/procedural signatures:
+- repetitive scaffolding and recaps;
+- formulaic transitions;
+- symmetric list rhythms;
+- constant “The key point is…”;
+- repeated “X is A, not B” curtain sentences;
+- repeated “The same X also…” transitions;
+- bureaucratic workflow language;
+- paragraphs explaining their organizational role;
+- excessive boxes and highlights;
+- excessive previewing.
+
+The criterion is whether the prose reads like a physicist developing an argument rather than a system executing a specification.
+
+---
+
+## 25. Scientific structure is not a prose template
+
+The backend may systematically ask for reader state, target, obstruction, misconception, fragile ste
