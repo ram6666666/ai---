@@ -1,0 +1,365 @@
+not alter the tree-level electromagnetic structures being reconstructed. Gauge covariance of \(D_\mu\Phi\) makes the matter kinetic term invariant exactly, not only to first order.
+
+Expand the covariant derivatives rather than treating \(D_\mu\) as notation:
+\begin{align}
+(D_\mu\Phi)^*D^\mu\Phi
+&=(\partial_\mu\Phi^*-\ii qA_\mu\Phi^*)
+(\partial^\mu\Phi+\ii qA^\mu\Phi)\\
+&=\partial_\mu\Phi^*\partial^\mu\Phi
++\ii qA^\mu(\partial_\mu\Phi^*)\Phi
+-\ii qA_\mu\Phi^*\partial^\mu\Phi
++q^2A_\mu A^\mu|\Phi|^2\\
+&=\partial_\mu\Phi^*\partial^\mu\Phi
+-A_\mu J_{(0)}^\mu
++q^2A_\mu A^\mu|\Phi|^2.
+\label{eq:p3-D-expanded}
+\end{align}
+Therefore
+\begin{equation}
+\boxed{
+\Lagr_{\rm SQED}
+=\Lagr_0-\frac14F^2
+-A_\mu J_{(0)}^\mu
++q^2A_\mu A^\mu|\Phi|^2.}
+\label{eq:p3-SQED-expanded}
+\end{equation}
+The linear interaction changes sign when \(q\to-q\); the quadratic term does not. The latter is the scalar-specific two-photon contact, usually called the seagull interaction.
+
+The word \emph{minimal} needs a boundary. Once the matter kinetic term \(|\partial\Phi|^2\) and the local phase convention are fixed, replacing \(\partial\) by \(D\) is the minimal lowest-derivative completion and the two terms in \cref{eq:p3-SQED-expanded} are forced together. Gauge invariance by itself does not forbid additional separately invariant operators such as \(|\Phi|^2F_{\mu\nu}F^{\mu\nu}\) when the theory is enlarged. Minimal coupling is therefore not a theorem that no other gauge-invariant interaction can exist.
+
+\section{Field equations and the interacting current}
+
+Vary \(\Phi^*\). Since
+\[
+\delta(D_\mu\Phi)^*=\partial_\mu\delta\Phi^*-\ii qA_\mu\delta\Phi^*,
+\]
+integration by parts gives
+\begin{align}
+\delta_{\Phi^*}S
+&=\int\dd^4x\left[
+(D_\mu\delta\Phi)^*D^\mu\Phi-m^2\delta\Phi^*\Phi
+\right]\\
+&=-\int\dd^4x\,\delta\Phi^*
+\left(D_\mu D^\mu\Phi+m^2\Phi\right),
+\end{align}
+where the surface term vanishes for compactly supported variations. Hence
+\begin{equation}
+\boxed{(D_\mu D^\mu+m^2)\Phi=0.}
+\label{eq:p3-covariant-KG}
+\end{equation}
+
+Now vary \(A_\nu\). The Maxwell term gives \(\partial_\mu F^{\mu\nu}\delta A_\nu\). For the matter term,
+\begin{align}
+\frac{\partial\Lagr_{\rm matter}}{\partial A_\nu}
+&=-J_{(0)}^\nu+2q^2A^\nu|\Phi|^2.
+\end{align}
+Thus
+\begin{equation}
+\boxed{\partial_\mu F^{\mu\nu}=J^\nu,}
+\label{eq:p3-Maxwell-dynamical-current}
+\end{equation}
+with
+\begin{equation}
+\boxed{\begin{aligned}
+J^\mu
+&=J_{(0)}^\mu-2q^2A^\mu|\Phi|^2\\
+&=\ii q\left[
+\Phi^*D^\mu\Phi-(D^\mu\Phi)^*\Phi
+\right].
+\end{aligned}}
+\label{eq:p3-interacting-current}
+\end{equation}
+The source correction anticipated from the failed trial theory in \cref{eq:p3-interacting-current-preview} has now been derived from the completed action. The current sourcing Maxwell is not the free Noether current with \(A_\mu\) appended elsewhere; it contains the gauge field explicitly. The covariant form in the second line makes its gauge invariance immediate.
+
+The conservation law follows from the coupled matter equation itself.
+\newpage
+Its derivation contains a cancellation that should remain explicit. Since the two bilinears in \cref{eq:p3-interacting-current} are gauge neutral, their ordinary derivatives expand as
+\begin{align}
+\partial_\mu(\Phi^*D^\mu\Phi)
+&=(D_\mu\Phi)^*D^\mu\Phi+\Phi^*D_\mu D^\mu\Phi,\\
+\partial_\mu((D^\mu\Phi)^*\Phi)
+&=(D_\mu D^\mu\Phi)^*\Phi+(D^\mu\Phi)^*D_\mu\Phi.
+\end{align}
+The two mixed terms cancel in the difference, leaving
+\begin{align}
+\partial_\mu J^\mu
+&=\ii q\left[
+\Phi^*D_\mu D^\mu\Phi-(D_\mu D^\mu\Phi)^*\Phi
+\right].
+\label{eq:p3-current-divergence-D}
+\end{align}
+Using \cref{eq:p3-covariant-KG} and its conjugate, the two mass terms cancel:
+\begin{equation}
+\boxed{\partial_\mu J^\mu=0.}
+\label{eq:p3-current-conservation-matter}
+\end{equation}
+Independently, taking the divergence of Maxwell's equation gives
+\begin{equation}
+\partial_\nu J^\nu
+=\partial_\nu\partial_\mu F^{\mu\nu}=0
+\label{eq:p3-current-conservation-Maxwell}
+\end{equation}
+because \(F^{\mu\nu}\) is antisymmetric while the derivatives commute. The matter equation and the gauge-field equation now demand the same conservation law. This is the consistency that was missing at the end of Part II.
+
+\section{Frequency sign, charge sign, and physical energy}
+
+For a classical solution in a region where \(A_\mu=0\), \cref{eq:p3-plane-wave-current} says that the sign of \(J^0\) follows both \(q\) and the sign chosen for the Fourier frequency. That classical fact should not be turned into a claim that the quantum antiparticle has negative physical energy.
+
+The accepted field expansion is
+\begin{equation}
+\Phi(x)=\int\frac{\dd^3p}{(2\pi)^3\sqrt{2E_{\mathbf p}}}
+\left[a(\mathbf p)\ee^{-\ii p\cdot x}
++b^\dagger(\mathbf p)\ee^{+\ii p\cdot x}\right],
+\qquad p^0=E_{\mathbf p}>0.
+\label{eq:p3-complex-expansion-reminder}
+\end{equation}
+The second Fourier phase is attached to a creation operator. In the free limit,
+\begin{align}
+:H:
+&=\int\frac{\dd^3p}{(2\pi)^3}
+E_{\mathbf p}\left(a^\dagger a+b^\dagger b\right),\\
+:Q_{\rm phys}:
+&=q\int\frac{\dd^3p}{(2\pi)^3}
+\left(a^\dagger a-b^\dagger b\right).
+\label{eq:p3-energy-charge-comparison}
+\end{align}
+Both one-particle sectors have positive energy; they have opposite charge. Historical negative-energy or filled-sea language was one route toward antiparticles, but it is not the modern operator statement being used here. The distinction among negative Fourier frequency, negative charge, and negative physical energy will remain essential when spinor fields appear.
+
+\chapter{Kinetic momentum in fields and particles}
+
+When the charged scalar varies slowly on the Compton time scale, the relativistic field description overlaps with ordinary charged-particle mechanics and can be checked against it. The field equation and an independent worldline action then meet on a quantity with direct mechanical meaning: the kinetic momentum.
+
+\section{Nonrelativistic limit of the gauged Klein--Gordon equation}
+
+With the house convention,
+\begin{equation}
+D_0=\partial_t+\ii qA^0,
+\qquad
+\mathbf D=\nabla-\ii q\Afield.
+\label{eq:p3-D-components}
+\end{equation}
+Factor out the positive rest-energy oscillation,
+\begin{equation}
+\Phi(t,\mathbf x)=\frac{\ee^{-\ii mt}}{\sqrt{2m}}\psi(t,\mathbf x).
+\label{eq:p3-gauged-NR-ansatz}
+\end{equation}
+Define the slowly acting temporal derivative
+\[
+\mathcal D_t\equiv\partial_t+\ii qA^0.
+\]
+Then
+\begin{align}
+D_0\Phi
+&=\frac{\ee^{-\ii mt}}{\sqrt{2m}}
+(-\ii m+\mathcal D_t)\psi,\\
+D_0D^0\Phi
+&=\frac{\ee^{-\ii mt}}{\sqrt{2m}}
+\left[-m^2-2\ii m\mathcal D_t+\mathcal D_t^2\right]\psi,\\
+D_iD^i\Phi
+&=-\frac{\ee^{-\ii mt}}{\sqrt{2m}}\,\mathbf D^2\psi.
+\end{align}
+Substitution into \cref{eq:p3-covariant-KG} cancels the rest-mass terms and gives the exact envelope equation
+\begin{equation}
+-2\ii m\mathcal D_t\psi
++\mathcal D_t^2\psi-\mathbf D^2\psi=0.
+\label{eq:p3-gauged-envelope-exact}
+\end{equation}
+When the energy scale above rest and the electromagnetic variation scale are small compared with \(m\), the \(\mathcal D_t^2\) term is subleading. Hence
+\begin{align}
+\ii(\partial_t+\ii qA^0)\psi
+&=-\frac{\mathbf D^2}{2m}\psi,
+\end{align}
+so
+\begin{equation}
+\boxed{
+\ii\partial_t\psi
+=\left[
+\frac{(-\ii\nabla-q\Afield)^2}{2m}+qA^0
+\right]\psi.}
+\label{eq:p3-gauged-Schrodinger}
+\end{equation}
+The kinetic momentum operator is therefore
+\begin{equation}
+\boxed{\boldsymbol\pi=-\ii\nabla-q\Afield.}
+\label{eq:p3-quantum-kinetic-momentum}
+\end{equation}
+The sign has not been borrowed from nonrelativistic quantum mechanics; it has descended from the same covariant derivative that made the relativistic theory locally gauge covariant.
+
+At leading nonrelativistic order, the time component of the interacting current becomes the ordinary charge density:
+\begin{align}
+D_0\Phi&=-\ii m\Phi+O(m^0),\\
+J^0
+&=\ii q\left[\Phi^*D_0\Phi-(D_0\Phi)^*\Phi\right]\\
+&=2qm|\Phi|^2+O(m^0)
+=\boxed{q|\psi|^2+O(m^{-1}).}
+\label{eq:p3-NR-charge-density}
+\end{align}
+The nonrelativistic reduction therefore produces the ordinary probability-density interpretation multiplied by the signed charge.
+
+\section{From a field source to a worldline coupling}
+
+A relativistic point particle with trajectory \(z^\mu(\tau)\) and charge \(q\) defines the current
+\begin{equation}
+J^\mu(x)=q\int\dd\tau\,
+\frac{\dd z^\mu}{\dd\tau}\,
+\delta^{(4)}(x-z(\tau)).
+\label{eq:p3-worldline-current}
+\end{equation}
+Inserted into the Maxwell source interaction,
+\begin{align}
+-\int\dd^4x\,J^\mu(x)A_\mu(x)
+&=-q\int\dd\tau\,\dot z^\mu A_\mu(z)\\
+&=-q\int A_\mu\dd z^\mu.
+\label{eq:p3-source-to-worldline}
+\end{align}
+The point-particle action is therefore
+\begin{equation}
+\boxed{
+S[z]=-m\int\dd s-q\int A_\mu\dd z^\mu.}
+\label{eq:p3-worldline-action}
+\end{equation}
+The worldline interaction is the distributional realization of the \(-J\cdot A\) source term already used in the field theory.
+
+The current is locally conserved away from worldline endpoints. Indeed,
+\begin{align}
+\partial_\mu J^\mu(x)
+&=q\int\dd\tau\,\dot z^\mu
+\partial_\mu\delta^{(4)}(x-z(\tau))\\
+&=-q\int\dd\tau\,\frac{\dd}{\dd\tau}
+\delta^{(4)}(x-z(\tau)).
+\end{align}
+For a complete worldline or fixed endpoint data, the remaining term is a boundary contribution. Local charge conservation in the field description and continuity of a charged worldline are therefore the same statement at different resolutions.
+
+Choose \(z^0=t\). Since
+\[
+A_\mu\dd z^\mu=A^0\dd t-\Afield\cdot\dd\mathbf z,
+\]
+\cref{eq:p3-worldline-action} becomes
+\begin{equation}
+\boxed{
+L=-m\sqrt{1-\mathbf v^2}-qA^0+q\Afield\cdot\mathbf v.}
+\label{eq:p3-particle-L}
+\end{equation}
+
+\section{Canonical and kinetic momentum}
+
+Differentiate \cref{eq:p3-particle-L} with respect to \(\mathbf v\):
+\begin{align}
+\mathbf p_{\rm can}
+&\equiv\frac{\partial L}{\partial\mathbf v}
+=\frac{m\mathbf v}{\sqrt{1-\mathbf v^2}}+q\Afield\\
+&=m\gamma\mathbf v+q\Afield.
+\label{eq:p3-canonical-momentum}
+\end{align}
+The momentum determined directly by the trajectory is
+\begin{equation}
+\boxed{
+\boldsymbol\pi\equiv m\gamma\mathbf v
+=\mathbf p_{\rm can}-q\Afield.}
+\label{eq:p3-classical-kinetic-momentum}
+\end{equation}
+It is the classical counterpart of \(-\ii\nabla-q\Afield\) in \cref{eq:p3-quantum-kinetic-momentum}.
+
+The gauge transformation makes the distinction operational. In three-vector notation,
+\[
+A^0\to A^0+\partial_t\alpha,
+\qquad
+\Afield\to\Afield-\nabla\alpha.
+\]
+The particle Lagrangian changes by
+\begin{align}
+\Delta L
+&=-q\partial_t\alpha-q\mathbf v\cdot\nabla\alpha\\
+&=-q\frac{\dd\alpha(z(t))}{\dd t}.
+\label{eq:p3-particle-L-gauge-boundary}
+\end{align}
+A total derivative leaves the trajectory equation unchanged, but it changes the canonical momentum:
+\begin{equation}
+\boxed{
+\mathbf p_{\rm can}\to\mathbf p_{\rm can}-q\nabla\alpha.}
+\label{eq:p3-pcanonical-gauge-shift}
+\end{equation}
+Consequently
+\begin{equation}
+(\mathbf p_{\rm can}-q\Afield)'
+=\mathbf p_{\rm can}-q\Afield,
+\label{eq:p3-pkin-gauge-invariance}
+\end{equation}
+so the kinetic momentum is independent of the local representative.
+
+\section{The exact relativistic Hamiltonian}
+
+The Legendre transform keeps the distinction visible:
+\begin{align}
+H
+&=\mathbf p_{\rm can}\cdot\mathbf v-L\\
+&=(m\gamma\mathbf v+q\Afield)\cdot\mathbf v
++m\sqrt{1-\mathbf v^2}+qA^0-q\Afield\cdot\mathbf v\\
+&=m\gamma+qA^0.
+\end{align}
+Because \(m^2\gamma^2=m^2+\boldsymbol\pi^2\),
+\begin{equation}
+\boxed{
+H=qA^0+\sqrt{m^2+(\mathbf p_{\rm can}-q\Afield)^2}.}
+\label{eq:p3-relativistic-H}
+\end{equation}
+The square-root energy depends on the gauge-invariant kinetic momentum. The canonical Hamiltonian itself is not invariant under a time-dependent gauge change: \(A^0\to A^0+\partial_t\alpha\) gives \(H\to H+q\partial_t\alpha\), exactly as expected when the Lagrangian changes by the total derivative \(-q\,\dd\alpha/\dd t\). The equations of motion and the mechanical energy \(H-qA^0\) are the gauge-independent content.
+
+
+
+\section{Recovering the Lorentz force}
+
+The particle action can now be tested against the measured force law, not only against the momentum combination. Apply the Euler--Lagrange equation to \cref{eq:p3-particle-L}. In components,
+\begin{equation}
+\frac{\dd}{\dd t}(m\gamma v_i+qA_i)
+=-q\partial_iA^0+qv_j\partial_iA_j.
+\label{eq:p3-EL-before-force}
+\end{equation}
+Expanding the total derivative on the left,
+\[
+\frac{\dd A_i}{\dd t}
+=\partial_tA_i+v_j\partial_jA_i,
+\]
+we obtain
+\begin{align}
+\frac{\dd\pi_i}{\dd t}
+&=q\left[-\partial_iA^0-\partial_tA_i
++v_j(\partial_iA_j-\partial_jA_i)\right].
+\end{align}
+The first two terms are \(E_i\). Since
+\[
+(\mathbf v\times\Bfield)_i
+=v_j(\partial_iA_j-\partial_jA_i),
+\]
+the result is
+\begin{equation}
+\boxed{
+\frac{\dd\boldsymbol\pi}{\dd t}
+=q(\Efield+\mathbf v\times\Bfield).}
+\label{eq:p3-Lorentz-force}
+\end{equation}
+The kinetic momentum identified from the field equation also obeys the Lorentz force law in the point-particle description.
+
+\chapter{The two-photon contact}
+
+The covariant derivative repaired the local phase comparison and also generated a term quadratic in the gauge field. Its physical content can be tested before developing a general scattering formalism. A single local insertion of
+\begin{equation}
+\Lagr_{\rm sg}(x)=q^2A_\mu(x)A^\mu(x)\Phi^*(x)\Phi(x)
+\label{eq:p3-seagull-L}
+\end{equation}
+can absorb one photon and emit another while carrying a charged scalar through the same spacetime point.
+
+\section{The contact topology}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Latex,scale=1.0]
+\coordinate (v) at (0,0);
+\draw[dashed,thick,->] (-4,0)--(v) node[midway,below=5pt] {$p$};
+\draw[dashed,thick,->] (v)--(4,0) node[midway,below=5pt] {$p'$};
+\draw[decorate,decoration={snake,amplitude=1.4pt,segment length=8pt},thick,->] (-2.3,2.8)--(v) node[midway,left=6pt] {$k,\lambda$};
+\draw[decorate,decoration={snake,amplitude=1.4pt,segment length=8pt},thick,->] (v)--(2.3,2.8) node[midway,right=6pt] {$k',\lambda'$};
+\fill (v) circle (2.3pt);
+\node[below=12pt of v] {$q^2A^2\Phi^*\Phi$};
+\end{tikzpicture}
+\caption{The scalar-QED contact interaction has two photon l
