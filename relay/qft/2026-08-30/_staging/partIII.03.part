@@ -1,0 +1,245 @@
+egs at one local vertex. The factor of two in its matrix element comes from the two indistinguishable photon-field contractions.}
+\label{fig:p3-seagull}
+\end{figure}
+
+For this calculation it is useful to keep scalar and photon oscillators visually distinct. Write \(a_\Phi(\mathbf p)\) for the charged-particle annihilator and \(c_\lambda(\mathbf k)\) for the photon annihilator; these are only relabelings of the operators already normalized in Parts I--II:
+\begin{align}
+[a_\Phi(\mathbf p),a_\Phi^\dagger(\mathbf q)]
+&=(2\pi)^3\delta^{(3)}(\mathbf p-\mathbf q),\\
+[c_\lambda(\mathbf k),c_{\lambda'}^\dagger(\mathbf q)]
+&=(2\pi)^3\delta_{\lambda\lambda'}\delta^{(3)}(\mathbf k-\mathbf q).
+\label{eq:p3-contact-operator-algebras}
+\end{align}
+Use physical transverse photon representatives. In radiation gauge they may be embedded as
+\[
+\eps^\mu_\lambda(k)=(0,\boldsymbol\eps_\lambda(\mathbf k)),
+\qquad
+k\cdot\eps_\lambda=0.
+\]
+The relevant free-field pieces are
+\begin{align}
+\Phi(x)&\supset
+\int\frac{\dd^3p}{(2\pi)^3\sqrt{2E_{\mathbf p}}}
+\,a_\Phi(\mathbf p)\ee^{-\ii p\cdot x},\\
+\Phi^*(x)&\supset
+\int\frac{\dd^3p'}{(2\pi)^3\sqrt{2E_{\mathbf p'}}}
+\,a_\Phi^\dagger(\mathbf p')\ee^{+\ii p'\cdot x},
+\label{eq:p3-contact-scalar-fields}
+\end{align}
+and
+\begin{equation}
+A^\mu(x)=\sum_\lambda\int\frac{\dd^3k}{(2\pi)^3\sqrt{2\omega_{\mathbf k}}}
+\left[
+\eps_\lambda^\mu(k)c_\lambda(\mathbf k)\ee^{-\ii k\cdot x}
++\eps_\lambda^{*\mu}(k)c_\lambda^\dagger(\mathbf k)\ee^{+\ii k\cdot x}
+\right].
+\label{eq:p3-contact-photon-field}
+\end{equation}
+
+\section{The factor of two and the external normalizations}
+
+Take incoming and outgoing invariantly normalized mass-shell states
+\begin{align}
+|i\rangle
+&=\sqrt{2E_{\mathbf p}}\sqrt{2\omega_{\mathbf k}}\,
+ a_\Phi^\dagger(\mathbf p)c_\lambda^\dagger(\mathbf k)|0\rangle,\\
+\langle f|
+&=\sqrt{2E_{\mathbf p'}}\sqrt{2\omega_{\mathbf k'}}\,
+\langle0|c_{\lambda'}(\mathbf k')a_\Phi(\mathbf p').
+\label{eq:p3-contact-cov-states}
+\end{align}
+Before multiplying by the invariant mass-shell external-state factors, the scalar contraction is
+\begin{align}
+&\langle0|a_\Phi(\mathbf p')\,\Phi^*(x)\Phi(x)\,
+ a_\Phi^\dagger(\mathbf p)|0\rangle \\
+&\qquad=
+\frac{\ee^{+\ii(p'-p)\cdot x}}
+{\sqrt{2E_{\mathbf p'}\,2E_{\mathbf p}}}.
+\label{eq:p3-contact-scalar-bare-contraction}
+\end{align}
+Multiplying by the two invariant mass-shell state factors in \cref{eq:p3-contact-cov-states} gives
+\begin{equation}
+\langle\mathbf p'|\Phi^*(x)\Phi(x)|\mathbf p\rangle_{\rm inv}
+=\ee^{+\ii(p'-p)\cdot x}.
+\label{eq:p3-contact-scalar-matrix}
+\end{equation}
+The cancellation of the two \(1/\sqrt{2E}\) field factors is therefore explicit rather than absorbed into a state convention.
+
+For the photons, first specify which Wick contractions belong to the connected tree-level four-point matrix element. Temporarily label the two identical field slots in the local operator as \(A_\mu^{[1]}(x)A^{[2]\mu}(x)\). Wick's theorem permits three pairing patterns. One pairs the two external photon operators with each other and the two fields at the vertex with each other; that term factorizes into a free external-photon overlap times a local photon self-contraction on the scalar line, so it is disconnected from the external photon and is not part of the tree-level Compton vertex. The connected contribution instead has each external photon attached to one of the two field slots.
+
+The elementary external-field contractions are
+\begin{align}
+\langle0|c_{\lambda'}(\mathbf k')A_\mu(x)|0\rangle
+&=\frac{\eps_{\lambda'\mu}^*(k')}{\sqrt{2\omega_{\mathbf k'}}}
+\ee^{+\ii k'\cdot x},\\
+\langle0|A^\mu(x)c_\lambda^\dagger(\mathbf k)|0\rangle
+&=\frac{\eps_\lambda^\mu(k)}{\sqrt{2\omega_{\mathbf k}}}
+\ee^{-\ii k\cdot x}.
+\label{eq:p3-contact-elementary-photon-contractions}
+\end{align}
+The connected contribution contains exactly two pairings.
+\begin{align}
+&\langle0|c_{\lambda'}(\mathbf k')
+ A_\mu^{[1]}(x)A^{[2]\mu}(x)
+ c_\lambda^\dagger(\mathbf k)|0\rangle_{\rm conn}
+\nonumber\\
+&\quad=
+\langle0|c_{\lambda'}(\mathbf k')A_\mu^{[1]}(x)|0\rangle
+\langle0|A^{[2]\mu}(x)c_\lambda^\dagger(\mathbf k)|0\rangle
+\nonumber\\
+&\qquad+
+\langle0|c_{\lambda'}(\mathbf k')A_\mu^{[2]}(x)|0\rangle
+\langle0|A^{[1]\mu}(x)c_\lambda^\dagger(\mathbf k)|0\rangle
+\nonumber\\
+&\quad=
+2\,\frac{\eps_{\lambda'}^*(k')\!\cdot\!\eps_\lambda(k)}
+{\sqrt{2\omega_{\mathbf k'}\,2\omega_{\mathbf k}}}
+\ee^{+\ii(k'-k)\cdot x}.
+\label{eq:p3-contact-two-photon-contractions}
+\end{align}
+The two terms are the two assignments of the external photons to the identical field slots. The temporary labels \([1]\) and \([2]\) are removed after the pairing count; they only expose the two indistinguishable ways of attaching the same local \(A^2\) operator to the external photons. Multiplying by \(\sqrt{2\omega_{\mathbf k'}}\sqrt{2\omega_{\mathbf k}}\) from the invariant mass-shell external states therefore yields
+\begin{equation}
+{}_{\rm inv}\!\langle\mathbf k',\lambda'|
+A_\mu(x)A^\mu(x)
+|\mathbf k,\lambda\rangle_{\rm conn}
+=2\,\eps_{\lambda'}^*(k')\cdot\eps_\lambda(k)
+\ee^{+\ii(k'-k)\cdot x}.
+\label{eq:p3-contact-photon-matrix}
+\end{equation}
+The coefficient 2 is therefore the literal Wick-pairing count of the two identical photon fields, not a symmetry factor appended after the matrix element has been evaluated.
+
+The covariant interaction-picture expansion is organized by the action. For the local seagull insertion,
+\begin{equation}
+\mathcal A_{\rm contact}^{(1)}
+=\ii\int\dd^4x\,
+\langle f|\Lagr_{\rm sg}(x)|i\rangle.
+\label{eq:p3-contact-first-Dyson}
+\end{equation}
+This formula should not be read as a general identification \(H_{\rm int}=-L_{\rm int}\) term by term. The linear scalar-QED coupling contains time derivatives of the charged field, so the canonical interaction Hamiltonian acquires additional \(A^0\)-dependent pieces when the conjugate momenta are eliminated. The transverse contact matrix element isolated here is unaffected by that distinction because its external radiation-gauge photons have \(\eps^0=0\); the later sequential calculation must be organized consistently from the full covariant interaction.
+
+Combining \cref{eq:p3-contact-scalar-matrix,eq:p3-contact-photon-matrix},
+\begin{align}
+\mathcal A_{\rm contact}^{(1)}
+&=\ii\,2q^2\,
+\eps_{\lambda'}^*(k')\cdot\eps_\lambda(k)
+\int\dd^4x\,
+\ee^{\ii(p'+k'-p-k)\cdot x}\\
+&=\ii(2\pi)^4\delta^{(4)}(p+k-p'-k')
+\left[2q^2\eps_{\lambda'}^*(k')\cdot\eps_\lambda(k)\right].
+\label{eq:p3-contact-amplitude-full}
+\end{align}
+Factoring out the four-momentum delta function defines the contact coefficient
+\begin{equation}
+\boxed{
+\mathcal M_{\rm contact}
+=2q^2\,\eps_{\lambda'}^*(k')\cdot\eps_\lambda(k).}
+\label{eq:p3-contact-M}
+\end{equation}
+For physical radiation-gauge representatives, \(\eps^0=0\), so with the mostly-minus metric
+\begin{equation}
+\eps_{\lambda'}^*\cdot\eps_\lambda
+=-\boldsymbol\eps_{\lambda'}^*\cdot\boldsymbol\eps_\lambda.
+\label{eq:p3-contact-spatial-sign}
+\end{equation}
+The contact interaction is insensitive to the sign of \(q\), as expected from its \(q^2\) coefficient.
+
+\section{Why the contact tensor is incomplete}
+
+Part II described a physical photon by a transverse radiation-gauge representative, while the covariant embedding retains the equivalence
+\begin{equation}
+\eps^\mu(k)\sim\eps^\mu(k)+\beta k^\mu.
+\label{eq:p3-polarization-equivalence}
+\end{equation}
+The vector \(k^\mu\) is not itself a physical radiation-gauge polarization. The gauge test is instead applied to the \emph{covariant tensor coefficient} before restricting its indices to physical representatives. For the contact vertex,
+\begin{equation}
+\mathcal M_{\rm contact}^{\mu\nu}=2q^2\eta^{\mu\nu},
+\qquad
+\mathcal M_{\rm contact}
+=\eps_{\lambda'\mu}^*(k')\,
+\mathcal M_{\rm contact}^{\mu\nu}\,
+\eps_{\lambda\nu}(k).
+\label{eq:p3-contact-tensor}
+\end{equation}
+If this tensor were already the complete on-shell amplitude, it would descend consistently to the polarization equivalence classes. Contracting the incoming index with its null momentum gives
+\begin{equation}
+\boxed{
+k_\nu\mathcal M_{\rm contact}^{\mu\nu}=2q^2k^\mu\neq0,}
+\label{eq:p3-contact-gauge-failure}
+\end{equation}
+and the analogous contraction with \(k'_\mu\) also fails. This is the precise content of the familiar shorthand \(\eps^\mu\to k^\mu\): it is a Ward-type contraction of the covariant coefficient, not the replacement of a physical photon state by an unphysical one.
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Latex,scale=0.88]
+% contact
+\begin{scope}[xshift=-5.2cm]
+\coordinate (v) at (0,0);
+\draw[dashed,thick,->] (-2.2,0)--(v) node[midway,below=4pt] {$p$};
+\draw[dashed,thick,->] (v)--(2.2,0) node[midway,below=4pt] {$p'$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (-1.4,2.1)--(v) node[midway,left=4pt] {$k,\lambda$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (v)--(1.4,2.1) node[midway,right=4pt] {$k',\lambda'$};
+\fill (v) circle (2pt);
+\node at (0,-0.75) {contact};
+\end{scope}
+% plus sign
+\node at (-1.65,0.65) {$+$};
+% sequential 1
+\begin{scope}[xshift=0cm]
+\coordinate (v1) at (-1.15,0);
+\coordinate (v2) at (1.15,0);
+\draw[dashed,thick,->] (-2.4,0)--(v1) node[midway,below=4pt] {$p$};
+\draw[dashed,thick,->] (v1)--(v2) node[midway,below=4pt] {$p+k$};
+\draw[dashed,thick,->] (v2)--(2.4,0) node[midway,below=4pt] {$p'$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (-1.8,2.1)--(v1) node[midway,left=3pt] {$k$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (v2)--(1.8,2.1) node[midway,right=3pt] {$k'$};
+\fill (v1) circle (2pt);\fill (v2) circle (2pt);
+\node at (0,-0.82) {$s$-ordering};
+\end{scope}
+\node at (3.25,0.65) {$+$};
+% sequential 2
+\begin{scope}[xshift=5.2cm]
+\coordinate (v1) at (-1.15,0);
+\coordinate (v2) at (1.15,0);
+\draw[dashed,thick,->] (-2.4,0)--(v1) node[midway,below=4pt] {$p$};
+\draw[dashed,thick,->] (v1)--(v2) node[midway,below=4pt] {$p-k'$};
+\draw[dashed,thick,->] (v2)--(2.4,0) node[midway,below=4pt] {$p'$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (-1.8,2.1)--(v2) node[midway,left=3pt] {$k$};
+\draw[decorate,decoration={snake,amplitude=1.1pt,segment length=7pt},thick,->] (v1)--(1.8,2.1) node[midway,right=3pt] {$k'$};
+\fill (v1) circle (2pt);\fill (v2) circle (2pt);
+\node at (0,-0.82) {$u$-ordering};
+\end{scope}
+\end{tikzpicture}
+\caption{At order \(q^2\), the local four-leg contact and the two orderings of the linear scalar--photon coupling belong to one amplitude. The dashed internal lines carry \(p+k\) and \(p-k'\), respectively; those momenta determine which scalar propagator is required.}
+\label{fig:p3-contact-and-missing-sequential}
+\end{figure}
+
+The failure in \cref{eq:p3-contact-gauge-failure} is therefore not a defect in the scalar-QED action. It says that one local term has been isolated from an amplitude whose gauge property belongs to the sum of all order-\(q^2\) topologies. The linear interaction \(-A_\mu J_{(0)}^\mu\) occurs twice in the two sequential diagrams of \cref{fig:p3-contact-and-missing-sequential}.
+
+Their new ingredient is no longer conceptually new. Time ordering contracts the intermediate charged fields with exactly the scalar Feynman kernel constructed in Part I,
+\begin{equation}
+\langle0|T\{\Phi(x)\Phi^*(y)\}|0\rangle
+=\Delta_F(x-y),
+\qquad
+\widetilde\Delta_F(r)=\frac{\ii}{r^2-m^2+\ii0}.
+\label{eq:p3-missing-scalar-propagator}
+\end{equation}
+For the two routings in the figure the internal momentum is \(r=p+k\) or \(r=p-k'\). The \(+\ii0\) is precisely the time-ordering prescription already derived with the kernel; it is not supplied by the diagram itself. The two sequential terms therefore contain the propagators \(\widetilde\Delta_F(p+k)\) and \(\widetilde\Delta_F(p-k')\). Their interference with the contact tensor is the first place where the present construction requires the full time-ordered scattering expansion rather than a single local insertion.
+
+Only the complete on-shell tensor can descend to the photon polarization equivalence classes. Its external-photon Ward contractions must satisfy
+\[
+k_\nu\mathcal M_{\rm full}^{\mu\nu}=0,
+\qquad
+k'_\mu\mathcal M_{\rm full}^{\mu\nu}=0.
+\]
+These on-shell contractions are distinct from the Ward--Takahashi identities for off-shell Green functions.
+
+\backmatter
+\begin{thebibliography}{9}
+\bibitem{Polosa} A. D. Polosa, \emph{Introduction to the Quantum Theory of Fields}, course program, Sapienza University of Rome (12 January 2024), items I.12--I.14 through the scalar-Compton contact transition.
+\bibitem{Coleman} S. Coleman, \emph{Lectures of Sidney Coleman on Quantum Field Theory}, World Scientific (2019), Chapter 27 on electromagnetic interactions and minimal coupling.
+\bibitem{Schwartz} M. D. Schwartz, \emph{Quantum Field Theory and the Standard Model}, Cambridge University Press (2014), scalar electrodynamics and gauge-invariance sections.
+\bibitem{Srednicki} M. Srednicki, \emph{Quantum Field Theory}, Cambridge University Press (2007), scalar electrodynamics chapter.
+\bibitem{Cabibbo} N. Cabibbo, L. Maiani and O. Benhar, \emph{An Introduction to Gauge Theories}, CRC Press (2018), gauge-covariant matter coupling.
+\bibitem{Duncan} A. Duncan, \emph{The Conceptual Framework of Quantum Field Theory}, Oxford University Press (2012), local gauge symmetry and covariant derivatives.
+\end{thebibliography}
+\end{document}
