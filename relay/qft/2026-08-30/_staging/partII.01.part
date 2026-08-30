@@ -1,0 +1,360 @@
+\documentclass[12pt,a4paper,oneside,openany]{book}
+\usepackage[a4paper,left=18mm,right=18mm,top=18mm,bottom=19mm,headheight=15pt,headsep=6mm,footskip=9mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{physics}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{float}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathmorphing,patterns,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{needspace}
+\setstretch{1.06}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0.18em}
+\setlist{nosep,leftmargin=2.0em}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,pdfauthor={A. D. Polosa course-based QFT notes},pdftitle={Introduction to Quantum Field Theory — Part II: Conserved Flow and Electromagnetic Radiation}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Introduction to Quantum Field Theory --- Part II}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries\Huge}{\filleft\Large Chapter \thechapter}{1ex}{\titlerule\vspace{1.2ex}\filright}
+\titleformat{\section}{\normalfont\bfseries\Large}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\bfseries\large}{\thesubsection}{0.7em}{}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\Efield}{\mathbf E}
+\newcommand{\Bfield}{\mathbf B}
+\newcommand{\Afield}{\mathbf A}
+\newcommand{\eps}{\varepsilon}
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+\vspace*{2.5cm}
+{\Huge\bfseries Introduction to Quantum Field Theory\par}
+\vspace{0.7cm}
+{\large Course-based reconstruction from A. D. Polosa's lectures\par}
+\vspace{1.8cm}
+{\huge\bfseries Part II\par}
+\vspace{0.45cm}
+{\LARGE Conserved Flow and Electromagnetic Radiation\par}
+\vfill
+{\large 30 August 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\chapter*{Conventions}
+\addcontentsline{toc}{chapter}{Conventions}
+The metric and Fourier conventions are those of Part I,
+\[
+\eta_{\mu\nu}=\operatorname{diag}(+1,-1,-1,-1),\qquad
+\ee^{-\ii k\cdot x}=\ee^{-\ii k^0t+\ii\mathbf k\cdot\mathbf x}.
+\]
+For electromagnetism we use Heaviside--Lorentz units and
+\[
+A^\mu=(A^0,\Afield),\qquad
+F^{\mu\nu}=\partial^\mu A^\nu-\partial^\nu A^\mu,
+\]
+with
+\[
+E^i=F^{i0},\qquad F^{ij}=-\epsilon^{ijk}B^k,
+\qquad \epsilon^{0123}=+1.
+\]
+Consequently
+\[
+\Efield=-\dot{\Afield}-\nabla A^0,\qquad
+\Bfield=\nabla\times\Afield.
+\]
+Spatial boldface components are Euclidean components; when a spatial Lorentz index is raised or lowered the mostly-minus metric supplies the corresponding sign.
+
+\tableofcontents
+\mainmatter
+
+\chapter{Conservation as local transport}
+
+Part I ended with a local equation doing two jobs at once. The Klein--Gordon operator fixed the free on-shell modes, and its Green functions described how a localized source is propagated. Energy and momentum, however, still entered mainly as labels of those modes. If a packet leaves a finite region, the local equation by itself does not yet tell us which density has left, through which boundary, or why its spatial integral should be the generator that translates the field. Those questions are carried by the boundary term in the variation of the action.
+
+\section{The boundary term in a field variation}
+
+Part I used the special free-scalar action
+\[
+S_\phi=\frac12\int\dd^4x\left(\partial_\mu\phi\,\partial^\mu\phi-m^2\phi^2\right)
+\]
+to obtain the Klein--Gordon equation. The calculation extends to arbitrary fields \(\phi_A\) and a local Lagrangian \(\Lagr(\phi_A,\partial_\mu\phi_A)\). On a finite spacetime region \(\Omega\), define
+\[
+\pi_A^{\mu}\equiv\frac{\partial\Lagr}{\partial(\partial_\mu\phi_A)}.
+\]
+Then
+\begin{align}
+\delta S
+&=\int_\Omega\dd^4x\left[
+\frac{\partial\Lagr}{\partial\phi_A}\delta\phi_A
++\pi_A^\mu\partial_\mu\delta\phi_A\right]\\
+&=\int_\Omega\dd^4x\,
+\underbrace{\left(
+\frac{\partial\Lagr}{\partial\phi_A}-\partial_\mu\pi_A^\mu
+\right)}_{\mathcal E_A}\delta\phi_A
++\int_{\partial\Omega}\dd\Sigma_\mu\,\pi_A^\mu\delta\phi_A.
+\label{eq:first-variation-boundary}
+\end{align}
+If the variation vanishes on the boundary, stationarity gives
+\begin{equation}
+\boxed{\mathcal E_A=0\quad\Longleftrightarrow\quad
+\partial_\mu\frac{\partial\Lagr}{\partial(\partial_\mu\phi_A)}
+-\frac{\partial\Lagr}{\partial\phi_A}=0.}
+\label{eq:field-EL-general}
+\end{equation}
+Nothing new has been assumed about the free scalar: inserting its Lagrangian into \cref{eq:field-EL-general} reproduces the Klein--Gordon equation already used in Part I. The new information in \cref{eq:first-variation-boundary} is the part that the usual fixed-boundary derivation discards.
+
+\section{A finite-dimensional control calculation}
+
+Mechanics makes the boundary structure easier to recognize. For
+\[
+S[q]=\int_{t_1}^{t_2}\dd t\,L(q_i,\dot q_i,t),\qquad
+p_i\equiv\frac{\partial L}{\partial\dot q_i},
+\]
+one finds
+\begin{equation}
+\delta S=\int_{t_1}^{t_2}\dd t\left(
+\frac{\partial L}{\partial q_i}-\frac{\dd p_i}{\dd t}
+\right)\delta q_i+\bigl[p_i\delta q_i\bigr]_{t_1}^{t_2}.
+\label{eq:mechanical-first-variation}
+\end{equation}
+Suppose a one-parameter transformation has
+\[
+\delta q_i=\epsilon\,\Delta q_i,
+\qquad
+\delta L=\epsilon\frac{\dd B}{\dd t}
+\]
+for constant infinitesimal \(\epsilon\). On a solution of the equations of motion,
+\[
+\delta L=\frac{\dd}{\dd t}(p_i\delta q_i),
+\]
+so
+\begin{equation}
+\boxed{Q=p_i\Delta q_i-B,\qquad \frac{\dd Q}{\dd t}=0.}
+\label{eq:noether-mechanics}
+\end{equation}
+The total derivative is essential. A free particle under a Galilean boost gives a clean check. With
+\[
+L=\frac{m}{2}\dot{\mathbf r}^{\,2},\qquad
+\delta\mathbf r=\epsilon\,\mathbf u\,t,
+\]
+we have
+\[
+\delta L=\epsilon m\dot{\mathbf r}\cdot\mathbf u
+=\epsilon\frac{\dd}{\dd t}(m\mathbf u\cdot\mathbf r).
+\]
+Thus
+\begin{equation}
+Q_{\mathbf u}=\mathbf u\cdot(t\mathbf p-m\mathbf r),
+\qquad
+\mathbf K=t\mathbf p-m\mathbf r
+\label{eq:galilei-boost-charge}
+\end{equation}
+is conserved. Requiring \(\delta L=0\) pointwise would have missed this generator.
+
+For the more familiar transformations, \cref{eq:noether-mechanics} gives
+\begin{align}
+\delta\mathbf r&=\epsilon\mathbf a
+&&\Longrightarrow& Q_{\mathbf a}&=\mathbf a\cdot\mathbf p,\\
+\delta\mathbf r&=\epsilon\,\boldsymbol\theta\times\mathbf r
+&&\Longrightarrow& Q_{\boldsymbol\theta}&=\boldsymbol\theta\cdot(\mathbf r\times\mathbf p),\\
+\delta q_i&=\epsilon\dot q_i,
+\quad \delta L=\epsilon\dot L
+&&\Longrightarrow& Q&=p_i\dot q_i-L=H.
+\end{align}
+Momentum, angular momentum and energy are therefore boundary data of action symmetries. In Hamiltonian language they also generate the corresponding transformations through Poisson brackets; after quantization the same statement is expressed by commutators and unitary operators.
+
+\section{A global field symmetry becomes a continuity equation}
+
+Let a field transformation be
+\begin{equation}
+\delta\phi_A=\epsilon\,\Delta_A(\phi),
+\qquad
+\delta\Lagr=\epsilon\,\partial_\mu K^\mu
+\label{eq:global-field-symmetry}
+\end{equation}
+Here \(\epsilon\) is constant. Substituting \(\delta\phi_A\) into the local first-variation identity gives
+\begin{align}
+\epsilon\partial_\mu K^\mu
+&=\epsilon\mathcal E_A\Delta_A
++\epsilon\partial_\mu(\pi_A^\mu\Delta_A).
+\end{align}
+Hence the combination
+\begin{equation}
+\boxed{j^\mu\equiv\pi_A^\mu\Delta_A-K^\mu}
+\label{eq:noether-current}
+\end{equation}
+satisfies the off-shell identity
+\begin{equation}
+\boxed{\partial_\mu j^\mu=-\mathcal E_A\Delta_A.}
+\label{eq:noether-offshell}
+\end{equation}
+It becomes a conservation law only on solutions of the equations of motion.
+
+The current can be isolated directly by temporarily replacing the constant parameter with a smooth test function \(\epsilon(x)\). Direct differentiation gives
+\begin{align}
+\delta_{\epsilon(x)}\Lagr
+&=\epsilon\partial_\mu K^\mu+\pi_A^\mu\Delta_A\,\partial_\mu\epsilon\\
+&=\partial_\mu(\epsilon K^\mu)+j^\mu\partial_\mu\epsilon.
+\label{eq:localized-parameter}
+\end{align}
+No local symmetry has been assumed: the spacetime dependence of \(\epsilon\) is only a probe. Its gradient tells us which current is coupled to a local deformation of the original global transformation.
+
+On shell,
+\[
+\partial_t j^0+\nabla\cdot\mathbf j=0.
+\]
+For a fixed spatial region \(V\),
+\begin{equation}
+\boxed{
+\frac{\dd}{\dd t}\int_V\dd^3x\,j^0
+=-\oint_{\partial V}\mathbf j\cdot\dd\mathbf S.}
+\label{eq:finite-volume-current}
+\end{equation}
+A conserved quantity can decrease inside a detector volume only by crossing its boundary. The familiar constant total charge is the limiting case in which the boundary is taken to infinity and the flux there vanishes.
+
+The local current is not unique. If \(K^{\nu\mu}=-K^{\mu\nu}\), then
+\[
+j'^\mu=j^\mu+\partial_\nu K^{\nu\mu}
+\]
+has the same divergence. With suitable boundary conditions its integrated charge is also unchanged. This freedom will matter when local momentum densities are written in different but physically equivalent forms.
+
+\section{The phase current of a complex scalar}
+
+Consider
+\begin{equation}
+\Lagr=\partial_\mu\Phi^*\partial^\mu\Phi-m^2\Phi^*\Phi.
+\label{eq:complex-scalar-L}
+\end{equation}
+The transformation
+\[
+\Phi\longrightarrow \ee^{-\ii\alpha}\Phi,
+\qquad
+\Phi^*\longrightarrow \ee^{+\ii\alpha}\Phi^*
+\]
+leaves \(\Lagr\) unchanged. Thus \(\Delta\Phi=-\ii\Phi\), \(\Delta\Phi^*=+\ii\Phi^*\), and \cref{eq:noether-current} gives
+\begin{equation}
+\boxed{j^\mu=\ii\left(
+\Phi^*\partial^\mu\Phi-\Phi\partial^\mu\Phi^*
+\right).}
+\label{eq:complex-current}
+\end{equation}
+For \(\Phi=A\ee^{-\ii p\cdot x}\) with \(p^0>0\), the current is
+\[
+j^\mu=2p^\mu|A|^2.
+\]
+Its time component is positive on the positive-frequency branch in this convention.
+
+After quantization write
+\begin{equation}
+\Phi(x)=\int\frac{\dd^3p}{(2\pi)^3\sqrt{2E_{\mathbf p}}}
+\left[a(\mathbf p)\ee^{-\ii p\cdot x}
++b^\dagger(\mathbf p)\ee^{+\ii p\cdot x}\right],
+\label{eq:complex-field-expansion}
+\end{equation}
+with
+\begin{align}
+[a(\mathbf p),a^\dagger(\mathbf q)]&=(2\pi)^3\delta^{(3)}(\mathbf p-\mathbf q),\\
+[b(\mathbf p),b^\dagger(\mathbf q)]&=(2\pi)^3\delta^{(3)}(\mathbf p-\mathbf q).
+\end{align}
+Inserting \cref{eq:complex-field-expansion} into \(Q=\int\dd^3x\,j^0\), the spatial integral produces \((2\pi)^3\delta^{(3)}(\mathbf p-\mathbf q)\) in the mixed terms and \(\delta^{(3)}(\mathbf p+\mathbf q)\) in the \(ab\) and \(a^\dagger b^\dagger\) terms. The latter cancel between the two pieces of \cref{eq:complex-current}. The factors \((E_{\mathbf p}+E_{\mathbf q})/(2\sqrt{E_{\mathbf p}E_{\mathbf q}})\) become unity after the mixed delta function is used. Normal ordering therefore gives
+\begin{equation}
+\boxed{:Q:=\int\frac{\dd^3p}{(2\pi)^3}
+\left[a^\dagger(\mathbf p)a(\mathbf p)-b^\dagger(\mathbf p)b(\mathbf p)\right].}
+\label{eq:charge-number-difference}
+\end{equation}
+Both sectors have positive energy; their distinction here is the sign of the conserved charge. Moreover
+\[
+[Q,a]=-a,\qquad [Q,b^\dagger]=-b^\dagger,
+\]
+so
+\begin{equation}
+[Q,\Phi(x)]=-\Phi(x).
+\end{equation}
+With \(U(\alpha)=\exp(+\ii\alpha Q)\), this reproduces \(U\Phi U^{-1}=\ee^{-\ii\alpha}\Phi\): the integrated current is the quantum generator of the transformation.
+
+\section{Translations and the stress tensor}
+
+An active translation acts on a scalar field as
+\[
+\delta\phi_A=\epsilon^\nu\partial_\nu\phi_A.
+\]
+Unlike the internal transformation used above, this variation contains a derivative of the field. The first-variation identity \eqref{eq:first-variation-boundary} itself does not require \(\Delta_A\) to be derivative-free, so applying it directly to translations remains legitimate.
+For constant \(\epsilon^\nu\), translation invariance gives
+\[
+\delta\Lagr=\epsilon^\nu\partial_\nu\Lagr
+=\partial_\mu(\epsilon^\nu\delta^\mu{}_{\nu}\Lagr).
+\]
+Equation \eqref{eq:noether-current} therefore produces four currents,
+\begin{equation}
+\boxed{
+T^\mu{}_{\nu}=\pi_A^\mu\partial_\nu\phi_A
+-\delta^\mu{}_{\nu}\Lagr,
+\qquad \partial_\mu T^\mu{}_{\nu}=0.}
+\label{eq:canonical-EMT}
+\end{equation}
+The associated charges are
+\[
+P_\nu=\int\dd^3x\,T^0{}_{\nu}.
+\]
+For the free real scalar,
+\begin{equation}
+T^{\mu\nu}=\partial^\mu\phi\partial^\nu\phi
+-\eta^{\mu\nu}\left[
+\frac12\partial_\rho\phi\partial^\rho\phi-\frac12m^2\phi^2
+\right],
+\label{eq:scalar-EMT}
+\end{equation}
+and
+\[
+T^{00}=\frac12\left[\dot\phi^2+(\nabla\phi)^2+m^2\phi^2\right].
+\]
+This is exactly the Hamiltonian density whose modes were quantized in Part I.
+
+The translation convention is also fixed by the local charge. Part I used
+\begin{equation}
+U(a)=\exp(+\ii a^\nu P_\nu),\qquad
+U(a)\phi(x)U(a)^{-1}=\phi(x+a).
+\label{eq:translation-convention}
+\end{equation}
+Expanding to first order gives
+\begin{equation}
+\boxed{[P_\nu,\phi(x)]=-\ii\partial_\nu\phi(x).}
+\label{eq:Pphi-commutator}
+\end{equation}
+For a spatial lower index, the canonical expression is
+\[
+P_i=\int\dd^3y\,\pi(y)\partial_i\phi(y),
+\]
+and the equal-time commutator gives directly
+\begin{align}
+[P_i,\phi(t,\mathbf x)]
+&=\int\dd^3y\,[\pi(t,\mathbf y),\phi(t,\mathbf x)]\partial_i\phi(t,\mathbf y)\\
+&=-\ii\partial_i\phi(t,\mathbf x),
+\end{align}
+in agreement with \cref{eq:Pphi-commutator}. Since the physical three-momentum component is \(P^i=-P_i\), the corresponding upper-index statement is \([P^i,\phi]=+\ii\partial_i\phi\). Keeping the index position visible prevents an otherwise easy sign error.
+
+Substitution of the scalar mode expansion into \(P^\mu=\int\dd^3x\,T^{0\mu}\) gives, after the \(aa\) and \(a^\dagger a^\dagger\) coefficients cancel on shell and the vacuum term is removed,
+\begin{equation}
+\boxed{:P^\mu:=\int\frac{\dd^3p}{(2\pi)^3\,
+ p^\mu a^\dagger(\mathbf p)a(\mathbf p).}
+\label{eq:scalar-P-Fock}
+\end
