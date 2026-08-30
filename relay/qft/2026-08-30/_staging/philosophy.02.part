@@ -1,0 +1,258 @@
+ps, and closure. The final text should not visibly mirror those fields with mechanical regularity.
+
+Scientific systematicity is useful; rhetorical systematicity quickly becomes artificial.
+
+---
+
+## 26. Behavioral calibration
+
+Past QFT, Many-Body, Superconductivity/Superfluidity, and Disorder discussions are active behavioral calibration data. Their value lies in reasoning trajectories such as
+
+\[
+\text{initial understanding}
+\rightarrow
+\text{objection}
+\rightarrow
+\text{reconstruction}
+\rightarrow
+\text{stable distinction}.
+\]
+
+Use them to learn which misconception is natural, which explanation failed, which distinction resolved it, and which derivational step could not be omitted. Do not imitate surface wording, and never treat a past discussion as scientific authority.
+
+---
+
+## 27. Local Writing Contracts are control instruments
+
+Before each substantive unit, determine internally:
+- reader state;
+- scientific target;
+- unresolved pressure (or explicitly none);
+- nearby misconception;
+- new object and theoretical status;
+- fragile steps;
+- physical/observable closure.
+
+Retrieve 2–5 task-similar calibration chains where useful. These controls should not usually become visible headings in the final prose.
+
+---
+
+## 28. No arbitrary page quotas
+
+Part length follows conceptual completeness, derivational reconstructibility, meaningful examples, necessary figures, and natural scientific boundaries. The coherent-work window controls execution chunk size, not final artifact length.
+
+Do not compress useful material merely to hit a nominal page count, and do not expand material to prove effort.
+
+---
+
+## 29. Part boundaries follow conceptual closure
+
+A Part should end where a coherent layer of theory has been constructed and a meaningful change of regime, representation, interaction structure, machinery, or unresolved obstruction occurs. Part boundaries are not lecture-number or PDF-length boundaries.
+
+Later Parts may assume earlier frozen Parts are mastered; self-containedness does not require endless re-derivation.
+
+---
+
+## 30. Scientific recurrence vs repetition
+
+Ideas may recur when they acquire new meaning. Gauge structure, for example, may first appear as potential nonuniqueness, later as constrained phase-space redundancy, and later as the consistency condition for interacting charged matter. That is productive recurrence.
+
+Repeating the same derivation without a new theoretical relation is not.
+
+---
+
+## 31. Control examples and failure modes
+
+Use contrasts such as Galilean vs Lorentz transformations, prescribed vs dynamical sources, regular vs outgoing solutions, positive-frequency correlation vs retarded response, canonical vs kinetic momentum, and local scalar field vs nonlocal relativistic square-root evolution.
+
+A good failure mode should expose which assumption or structure is missing.
+
+---
+
+## 32. Use the lowest sufficient formal level, but do not artificially delay depth
+
+Avoid silent forward dependency, not intellectual sophistication. If representation theory, distributions, analytic continuation, constrained Hamiltonian methods, functional methods, or RG language becomes the natural minimal language for a problem and can be developed self-containedly, it may be introduced.
+
+---
+
+## 33. Distinguish necessity from choice
+
+Actively distinguish:
+- mathematical necessity;
+- physical necessity;
+- consistency requirement;
+- convention;
+- gauge choice;
+- approximation;
+- effective truncation;
+- historical route;
+- pedagogical route.
+
+Do not write “we must” when the real meaning is “this is the route we choose because it is efficient”.
+
+---
+
+## 34. Gauge theory requires especially strict status discipline
+
+Distinguish physical global symmetry, local redundancy, boundary-trivial gauge transformations, transformations with boundary/asymptotic content, gauge fixing, residual gauge freedom, constrained phase space, physical transverse states, covariant representatives, and gauge-invariant observables.
+
+Gauge transformations should arise from real descriptive redundancy/constraints/consistency when possible, not merely be presented as formulas to memorize.
+
+---
+
+## 35. Relativity must act on actual objects
+
+Words such as “covariant” should not remain promissory labels. Eventually show how relativity acts on the actual structures used:
+
+\[
+|p\rangle,
+\quad a^\dagger(\mathbf p),
+\quad \phi(x),
+\quad A_\mu(x),
+\quad \varepsilon^\mu_\lambda(k),
+\]
+
+while distinguishing state-space unitary representations, finite-dimensional field-component transformations, gauge readjustment, invariant measure, and physical helicity representations.
+
+---
+
+## 36. Beyond the Polosa course
+
+The core should naturally support later work on scattering/LSZ, path integrals, generating functionals, effective actions, renormalization/RG, spontaneous symmetry breaking, non-Abelian gauge theory, fermions, many-body Green functions, response theory, finite temperature/imaginary time, EFT, collective modes, condensed-matter field theory, statistical field theory, and disorder.
+
+The long-term aim is to reveal relativistic QFT, many-body field theory, and statistical field theory as related field-theoretic languages in different physical regimes, not permanently separate subjects.
+
+---
+
+## 37. Transferable field-theory habits
+
+The notes should train readers to identify degrees of freedom, distinguish representation from ontology, track normalization, inspect boundary conditions and orders of limits, separate identities from approximations, identify gauge dependence and observables, translate among operator/functional/diagrammatic languages, choose natural variables for a regime, understand effective descriptions, and test theories against simple limits and control cases.
+
+---
+
+## 38. Audit is epistemic, not bureaucratic
+
+Audit layers are partly independent:
+- scientific correctness;
+- derivational completeness;
+- conceptual/status discipline;
+- behavioral/theory-building quality;
+- prose quality;
+- visual/print quality;
+- cross-Part semantic continuity;
+- independent adversarial review.
+
+Audits should try to falsify acceptance, not confirm author intention.
+
+---
+
+## 39. Frozen is an accepted state, not infallibility
+
+A frozen Part is a canonical snapshot judged safe to support later work. It may be reopened when a strong independent review finds a real flaw. Version prestige must never override scientific truth.
+
+---
+
+## 40. Independent review should not inherit internal confidence
+
+A blind reviewer should first receive the notes and project philosophy, not all internal PASS reports. Ask them to search for unconstructed assumptions, hidden interfaces, missing boundary conditions, unreconstructible factors, unproved covariance, representation conflations, retrospective motivation, and silent forward dependency.
+
+A justified REOPEN is more valuable than an uncritical PASS.
+
+---
+
+## 41. Productive tensions should remain explicit
+
+The project deliberately manages rather than eliminates tensions:
+- Polosa fidelity vs reconstructed dependency;
+- self-containedness vs advanced depth;
+- systematic authoring vs natural prose;
+- observables-first vs formal necessity;
+- derivational completeness vs verbosity;
+- complexity expansion vs artificial staging;
+- conceptual caution vs rhetorical repetition.
+
+No universal stylistic rule resolves these. The physics should decide locally.
+
+---
+
+## 42. The real unit of success is reader-state transformation
+
+A completed chapter is not the fundamental progress metric. The real question is what the reader can now independently reconstruct that they could not before.
+
+For example:
+
+\[
+R_i:\ \text{knows oscillator quantization}
+\]
+
+should become something like
+
+\[
+R_f:\ \text{can distinguish mode quanta, relativistic one-particle states, and local field insertions and derive their interface}.
+\]
+
+This reader-state transition is the true unit of pedagogical success.
+
+---
+
+## 43. Final standard
+
+A successful section should leave the reader able to say:
+
+- I know the physical question.
+- I know what was already established.
+- I know why the new object appeared.
+- I know what kind of object it is.
+- I can reconstruct the important derivation.
+- I know which steps are conventions, approximations, or necessities.
+- I can translate to relevant alternative representations.
+- I know what calculation or physical quantity the formalism controls.
+- I know the regime of validity.
+- I can see what genuine problem remains.
+
+A compact statement of the aspiration is
+
+\[
+\boxed{
+\begin{aligned}
+&\text{identify the real question}
+\rightarrow \text{preserve useful intuition}
+\rightarrow \text{locate the precise limitation}
+\\
+&\rightarrow \text{make the missing theoretical distinction}
+\rightarrow \text{introduce only necessary structure}
+\\
+&\rightarrow \text{derive without erasing fragile mechanisms}
+\rightarrow \text{translate representations where useful}
+\\
+&\rightarrow \text{return to calculation/observable/physical meaning}
+\rightarrow \text{leave the next genuine question visible}.
+\end{aligned}
+}
+\]
+
+Even this must not become a prose template. **The science determines the route.**
+
+---
+
+# Questions for an independent reviewer
+
+Please review the philosophy itself, not merely its implementation.
+
+1. Are there internal contradictions among these principles?
+2. Is theory-builder exposition overvalued relative to other legitimate forms of advanced exposition?
+3. Can observables-first become artificial in foundational QFT?
+4. Does status discipline risk over-explanation and reduced fluency?
+5. Does local reconstructibility risk uncontrolled length?
+6. Is “Polosa fidelity” precise enough to make difficult editorial decisions?
+7. Can logical necessity and pedagogical route actually be kept distinct in practice?
+8. Does behavioral calibration risk overfitting one reader's historical misconceptions?
+9. Is complexity expansion appropriate throughout QFT or only in selected domains?
+10. Is the object lifecycle missing categories such as theorem/proof structure, algebraic relations, consistency/coherence conditions, or universality classes?
+11. Are mathematical structure and abstraction given enough independent weight?
+12. Is first-mile/last-mile philosophy suitable for BRST, anomalies, renormalization, operator algebras, or axiomatic structures?
+13. Could anti-AI prose rules suppress useful explicit signposting?
+14. Is the long-term bridge from relativistic QFT to many-body/statistical field theory compatible with preserving Polosa's intellectual trajectory?
+15. Which principles should be removed, merged, sharpened, or added before this is treated as the canonical constitution of the project?
+
+The desired review is not an endorsement. Try to identify how faithfully applying these rules could still produce a scientifically weak, pedagogically distorted, overly elaborate, or structurally biased reader.
